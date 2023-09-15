@@ -25,6 +25,9 @@
   },
   "homepage": "https://github.com/lorilu-coder/electron-simple-demo#readme",
   "devDependencies": {
-    "cz-customizable": "^6.3.0"
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
+    "cz-customizable": "^6.3.0",
+    "husky": "^7.0.1"
   }
 }
