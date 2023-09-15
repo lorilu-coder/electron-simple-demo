@@ -1,0 +1,30 @@
+{
+  "name": "electron-simple-demo",
+  "version": "1.0.0",
+  "description": "electron simple demo",
+  "main": "main.js",
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lorilu-coder/electron-simple-demo.git"
+  },
+  "keywords": [
+    "electron"
+  ],
+  "author": "lorilu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lorilu-coder/electron-simple-demo/issues"
+  },
+  "homepage": "https://github.com/lorilu-coder/electron-simple-demo#readme",
+  "devDependencies": {
+    "cz-customizable": "^6.3.0"
+  }
+}
