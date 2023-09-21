@@ -5,16 +5,26 @@
   <head>
     <meta charset="UTF-8">
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
-    <title>你好!</title>
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'"> -->
+    <title>Electron Demo</title>
+    <style>
+        
+        
+        button {
+            width: 220px; 
+            margin: 15px;
+            display: block;
+        }
+    </style>
   </head>
   <body>
-    <h1>你好!</h1>
-    我们正在使用 Node.js <span id="node-version"></span>,
-    Chromium <span id="chrome-version"></span>,
-    和 Electron <span id="electron-version"></span>.
+    <button onclick="handleOpenWindow()">1.打开新窗口</button>
+    <button onclick="handleParseXml()">2.解析XML文件</button>
+    <button onclick="handleParseJson()">3.解析JSON文件</button>
+    <button onclick="handleUseWebservice()">4.调用Webservice</button>
+    <button onclick="handleUseC()">5.调用C++ DLL</button>
 
     <!-- 您也可以此进程中运行其他文件   -->
-    <!-- <script src="./renderer.js"></script> -->
+    <script src="./src/main/index.js"></script>
   </body>
 </html>
