@@ -2,13 +2,17 @@ const { ipcRenderer } = require('electron')
 const fs = require('fs')
 const xml2js = require('xml2js')
 const soap = require('soap')
+const ffi = require('ffi-napi')
+const path = require('path')
+let { arch } = process // x64
+console.log(arch)
 
 
 /**
  * 1.打开新窗口
  */
 function handleOpenWindow() {
-    const data =  {
+    const data = {
         imgUrl: 'files/99501MB01202106240002.jpg',
         isImgType: false,
         picno: '99501MB01202106240002'
@@ -40,7 +44,7 @@ function handleParseXml() {
 /**
  * 3.解析JSON文件
  */
-function handleParseJson(){
+function handleParseJson() {
     const filepath = './assets/json/demojson.json'
     try {
         const json = fs.readFileSync(filepath, 'utf8')
@@ -71,4 +75,19 @@ function handleUseWebservice() {
             alert(jsonString)
         })
     })
+}
+
+/**
+ * 5.调用C++ DLL
+ */
+function handleUseC() {
+    const dllFilePath = path.resolve(__dirname, 'assets/dll/MYDLLDEMO.dll');
+    // 'ADD' 是c++定义的函数名，数组第一个参数是返回值类型，第二个参数是入参类型
+    var libm = ffi.Library(dllFilePath, {
+        'add': [ 'int', [ 'int', 'int' ]]
+    });
+    // 加载 DLL文件,无需写扩展名,将DLL中的函数映射成JS方法
+    // 导出为JS方法 
+    let addResult = libm.add(1, 2);
+    alert(addResult)
 }
