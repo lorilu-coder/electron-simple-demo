@@ -5,7 +5,6 @@ This repo is a simple demos of Electron.
 
 
 ## How to use
----
 
 First, clone the repo.
 
@@ -26,7 +25,6 @@ npm run start
 
 
 ## Electron 集成 C++ Dll
----
 
 Install the dependencies.
 
